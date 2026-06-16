@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HypeWear — Fashion House</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="announce-bar">
+    Free shipping on orders over <span>PKR 3,000</span> &nbsp;·&nbsp; New Summer Collection Now Live &nbsp;·&nbsp; Use code <span>HypeWear5</span> for 15% off
+  </div>
+
+  <!-- HEADER -->
+  <header id="main-header">
+    <div class="header-inner">
+      <nav>
+        <a href="#" onclick="showPage('home');return false;">Home</a>
+        <a href="#" onclick="filterAndShowShop('Women');return false;">Women</a>
+        <a href="#" onclick="filterAndShowShop('Men');return false;">Men</a>
+        <a href="#" onclick="filterAndShowShop('Kids');return false;">Kids</a>
+        <a href="#" onclick="filterAndShowShop('Accessories');return false;">Accessories</a>
+      </nav>
+
+      <a class="logo" href="#" onclick="showPage('home');return false;">HYPE<span>WE</span>AR</a>
+
+      <div class="header-actions">
+        <button class="icon-btn" onclick="toggleSearch()" aria-label="Search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        </button>
+        <button class="icon-btn" onclick="showPage('wishlist')" aria-label="Wishlist">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </button>
+        <button class="icon-btn" onclick="toggleCart()" aria-label="Cart" style="position:relative">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          <span class="cart-badge" id="cart-count">0</span>
+        </button>
+        <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu">
+    <button onclick="toggleMobileMenu()" style="position:absolute;top:24px;right:24px;background:none;border:none;cursor:pointer;color:var(--charcoal)">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <nav style="display:flex;flex-direction:column;gap:20px;">
+      <a href="#" onclick="showPage('home');toggleMobileMenu();return false;">Home</a>
+      <a href="#" onclick="showPage('shop');toggleMobileMenu();return false;">All Collections</a>
+      <a href="#" onclick="filterAndShowShop('Women');toggleMobileMenu();return false;">Women</a>
+      <a href="#" onclick="filterAndShowShop('Men');toggleMobileMenu();return false;">Men</a>
+      <a href="#" onclick="filterAndShowShop('Kids');toggleMobileMenu();return false;">Kids</a>
+      <a href="#" onclick="filterAndShowShop('Accessories');toggleMobileMenu();return false;">Accessories</a>
+      <a href="#" onclick="filterAndShowShop('Sale');toggleMobileMenu();return false;">Sale</a>
+    </nav>
+  </div>
+
+  <!-- ==================== HOME PAGE ==================== -->
+  <div id="page-home" class="page active">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-left">
+        <p class="hero-eyebrow">Summer Collection 2026</p>
+        <h1 class="hero-title">Refined<br><em>Elegance</em><br>Redefined</h1>
+        <p class="hero-desc">Discover curated fashion that speaks to the modern soul. Premium fabrics, timeless silhouettes, crafted for those who appreciate beauty in detail.</p>
+        <div class="hero-cta-group">
+          <a class="btn-primary" href="#" onclick="showPage('shop');return false;">Shop Collection</a>
+          <a class="btn-ghost" href="#" onclick="scrollToSection('lookbook');return false;">View Lookbook</a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-image-placeholder">
+          <svg class="pattern-svg" viewBox="0 0 600 800" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:0.3">
+            <circle cx="300" cy="200" r="180" stroke="#B8934A" stroke-width="0.5"/>
+            <circle cx="300" cy="200" r="240" stroke="#B8934A" stroke-width="0.3"/>
+            <circle cx="300" cy="600" r="150" stroke="#B8934A" stroke-width="0.5"/>
+            <line x1="0" y1="400" x2="600" y2="400" stroke="#B8934A" stroke-width="0.3"/>
+          </svg>
+          <svg viewBox="0 0 400 600" width="70%" height="70%" style="position:relative;z-index:1">
+            <ellipse cx="200" cy="80" rx="45" ry="50" fill="#2a2520" opacity="0.8"/>
+            <path d="M155 130 Q140 200 120 400 L280 400 Q260 200 245 130 Z" fill="#3d3028" opacity="0.9"/>
+            <path d="M120 400 Q100 500 90 600 L310 600 Q300 500 280 400 Z" fill="#2d251e" opacity="0.95"/>
+            <rect x="130" y="230" width="140" height="18" rx="2" fill="#B8934A" opacity="0.6"/>
+            <path d="M175 130 Q200 155 225 130" stroke="#B8934A" stroke-width="1.5" fill="none" opacity="0.7"/>
+          </svg>
+          <div class="hero-overlay-text">
+            <div class="hero-tag">SS 2026</div>
+            <div class="hero-tag">New In</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORY STRIP -->
+    <div class="cat-strip">
+      <div class="cat-grid">
+        <a class="cat-item" href="#" onclick="filterAndShowShop('Women');return false;">
+          <div class="cat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="7" r="4"/><path d="M12 11v10M8 21h8M6 14h12"/></svg>
+          </div>
+          <span class="cat-name">Women</span>
+          <span class="cat-count">248 items</span>
+        </a>
+        <a class="cat-item" href="#" onclick="filterAndShowShop('Men');return false;">
+          <div class="cat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="6" y="2" width="12" height="20" rx="1"/><path d="M9 8h6M9 12h6M9 16h4"/></svg>
+          </div>
+          <span class="cat-name">Men</span>
+          <span class="cat-count">186 items</span>
+        </a>
+        <a class="cat-item" href="#" onclick="filterAndShowShop('Kids');return false;">
+          <div class="cat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <span class="cat-name">Kids</span>
+          <span class="cat-count">124 items</span>
+        </a>
+        <a class="cat-item" href="#" onclick="filterAndShowShop('Accessories');return false;">
+          <div class="cat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <span class="cat-name">Accessories</span>
+          <span class="cat-count">95 items</span>
+        </a>
+        <a class="cat-item" href="#" onclick="filterAndShowShop('Sale');return false;">
+          <div class="cat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <span class="cat-name">Sale</span>
+          <span class="cat-count">67 items</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- NEW ARRIVALS -->
+    <div class="section">
+      <div class="section-header">
+        <div>
+          <div class="section-eyebrow">Just Landed</div>
+          <h2 class="section-title">New Arrivals</h2>
+        </div>
+        <button class="view-all" onclick="showPage('shop')">View All</button>
+      </div>
+      <div class="product-grid" id="new-arrivals-grid"></div>
+    </div>
+
+    <!-- PROMO BANNER -->
+    <div class="promo-banner">
+      <div class="promo-content">
+        <p class="promo-eyebrow">Limited Time Offer</p>
+        <h2 class="promo-title serif">End of<br><em>Season Sale</em></h2>
+        <p class="promo-desc">Up to 50% off on selected styles. Elevate your wardrobe without breaking the bank.</p>
+        <div class="countdown">
+          <div class="count-block">
+            <span class="count-num" id="cd-h">11</span>
+            <div class="count-label">Hours</div>
+          </div>
+          <div class="count-sep">:</div>
+          <div class="count-block">
+            <span class="count-num" id="cd-m">59</span>
+            <div class="count-label">Minutes</div>
+          </div>
+          <div class="count-sep">:</div>
+          <div class="count-block">
+            <span class="count-num" id="cd-s">59</span>
+            <div class="count-label">Seconds</div>
+          </div>
+        </div>
+        <a class="btn-primary" href="#" onclick="filterAndShowShop('Sale');return false;" style="display:inline-block">Shop Sale</a>
+      </div>
+    </div>
+
+    <!-- LOOKBOOK -->
+    <div class="section" id="lookbook">
+      <div class="section-header">
+        <div>
+          <div class="section-eyebrow">Inspiration</div>
+          <h2 class="section-title">The Lookbook</h2>
+        </div>
+      </div>
+      <div class="lookbook-grid">
+        <div class="look-item">
+          <div class="look-placeholder" style="height:100%;min-height:500px;">
+            <div style="width:100%;height:100%;background:linear-gradient(160deg,#2d2520,#1a1512);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
+              <svg viewBox="0 0 300 500" width="60%">
+                <ellipse cx="150" cy="80" rx="40" ry="44" fill="#3d3028"/>
+                <path d="M110 124 Q85 220 70 420 L230 420 Q215 220 190 124 Z" fill="#4a3930"/>
+                <path d="M70 420 Q55 470 50 500 L250 500 Q245 470 230 420 Z" fill="#362820"/>
+                <rect x="80" y="200" width="140" height="14" fill="#B8934A" opacity="0.8"/>
+              </svg>
+              <div class="look-overlay" style="opacity:1;background:linear-gradient(to top,rgba(14,14,12,0.85) 0%,transparent 50%)">
+                <div class="look-info">
+                  <div class="look-tag">Editorial</div>
+                  <div class="look-title">The Evening Silhouette</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="look-item">
+          <div class="look-placeholder">
+            <div style="width:100%;height:100%;background:linear-gradient(135deg,#e8e0d5,#d4c8b8);display:flex;align-items:center;justify-content:center;position:relative;">
+              <svg viewBox="0 0 300 400" width="60%">
+                <ellipse cx="150" cy="65" rx="36" ry="38" fill="#8a7060"/>
+                <path d="M114 103 Q100 160 90 340 L210 340 Q200 160 186 103 Z" fill="#c4b09a"/>
+                <rect x="105" y="160" width="90" height="10" fill="#5a4030" opacity="0.5"/>
+              </svg>
+              <div class="look-overlay">
+                <div class="look-info">
+                  <div class="look-tag">Casual</div>
+                  <div class="look-title">Effortless Days</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="look-item">
+          <div class="look-placeholder">
+            <div style="width:100%;height:100%;background:linear-gradient(135deg,#1a2030,#0e1525);display:flex;align-items:center;justify-content:center;position:relative;">
+              <svg viewBox="0 0 300 400" width="60%">
+                <ellipse cx="150" cy="65" rx="36" ry="38" fill="#2a3545"/>
+                <path d="M114 103 Q90 160 80 340 L220 340 Q210 160 186 103 Z" fill="#1e3050"/>
+                <path d="M114 103 L80 200 L60 340 L100 340 L120 200 Z" fill="#243860"/>
+                <path d="M186 103 L220 200 L240 340 L200 340 L180 200 Z" fill="#243860"/>
+                <rect x="100" y="175" width="100" height="8" fill="#B8934A" opacity="0.6"/>
+              </svg>
+              <div class="look-overlay">
+                <div class="look-info">
+                  <div class="look-tag">Formal</div>
+                  <div class="look-title">The Power Suit</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="look-item">
+          <div class="look-placeholder">
+            <div style="width:100%;height:100%;background:linear-gradient(135deg,#2d1a1a,#1a0f0f);display:flex;align-items:center;justify-content:center;position:relative;">
+              <svg viewBox="0 0 300 400" width="60%">
+                <ellipse cx="150" cy="65" rx="36" ry="38" fill="#5a2020"/>
+                <path d="M114 103 Q95 180 88 340 L212 340 Q205 180 186 103 Z" fill="#7a2a2a"/>
+                <path d="M88 340 Q82 375 80 400 L220 400 Q218 375 212 340 Z" fill="#5a2020"/>
+                <circle cx="150" cy="120" r="8" fill="#B8934A" opacity="0.9"/>
+              </svg>
+              <div class="look-overlay">
+                <div class="look-info">
+                  <div class="look-tag">Summer</div>
+                  <div class="look-title">Crimson Dreams</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FEATURES BAR -->
+    <div class="features-bar">
+      <div class="features-inner">
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+          <div>
+            <div class="feature-title">Free Delivery</div>
+            <div class="feature-desc">On all orders above PKR 3,000 across Pakistan</div>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.81"/></svg>
+          </div>
+          <div>
+            <div class="feature-title">Easy Returns</div>
+            <div class="feature-desc">30-day hassle-free return policy</div>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </div>
+          <div>
+            <div class="feature-title">Secure Payment</div>
+            <div class="feature-desc">JazzCash, EasyPaisa, Visa &amp; COD available</div>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <div class="feature-title">Authentic Quality</div>
+            <div class="feature-desc">100% genuine fabrics, ethically sourced</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BRANDS -->
+    <div class="brands-section">
+      <p class="brands-title">Trusted by fashion lovers across Pakistan</p>
+      <div class="brands-logos">
+        <span class="brand-logo">Gul Ahmed</span>
+        <span class="brand-logo">Khaadi</span>
+        <span class="brand-logo">Sana Safinaz</span>
+        <span class="brand-logo">Sapphire</span>
+        <span class="brand-logo">Alkaram</span>
+        <span class="brand-logo">Zara</span>
+      </div>
+    </div>
+
+    <!-- TESTIMONIALS -->
+    <div class="testimonials">
+      <div class="testimonials-inner">
+        <div class="section-header">
+          <div>
+            <div class="section-eyebrow">Customer Stories</div>
+            <h2 class="section-title">What Our Clients Say</h2>
+          </div>
+        </div>
+        <div class="test-grid">
+          <div class="test-card">
+            <div class="test-rating">
+              <span class="test-star">★</span><span class="test-star">★</span><span class="test-star">★</span><span class="test-star">★</span><span class="test-star">★</span>
+            </div>
+            <p class="test-quote">"The Gulbahar Embroidered Lawn is absolutely stunning. The quality surpassed my expectations and arrived beautifully packaged."</p>
+            <div class="test-author">
+              <div class="test-avatar">A</div>
+              <div>
+                <div class="test-name">Aisha Rahman</div>
+                <div class="test-loc">Lahore, Pakistan</div>
+              </div>
+            </div>
+          </div>
+          <div class="test-card">
+            <div class="test-rating">
+              <span class="test-star">★</span><span class="test-star">★</span><span class="test-star">★</span><span class="test-star">★</span><span class="test-star">★</span>
+            </div>
+            <p class="test-quote">"My husband's Linen Kurta Pajama is perfection. The fabric breathes beautifully in summer — he's worn it every other day since it arrived."</p>
+            <div class="test-author">
+              <div class="test-avatar">S</div>
+              <div>
+                <div class="test-name">Sara Malik</div>
+                <div class="test-loc">Karachi, Pakistan</div>
+              </div>
+            </div>
+          </div>
+          <div class="test-card">
+            <div class="test-rating">
+              <span class="test-star">★</span><span class="test-star">★</span><span class="test-star">★</span><span class="test-star">★</span><span class="test-star" style="color:var(--muted)">★</span>
+            </div>
+            <p class="test-quote">"The Gharara Set was the centrepiece of my sister's wedding. Every guest asked where it came from. HypeWear never disappoints."</p>
+            <div class="test-author">
+              <div class="test-avatar">F</div>
+              <div>
+                <div class="test-name">Fatima Noor</div>
+                <div class="test-loc">Islamabad, Pakistan</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NEWSLETTER -->
+    <div class="newsletter">
+      <div class="newsletter-inner">
+        <p class="newsletter-eyebrow">Stay in the know</p>
+        <h2 class="newsletter-title serif">Join the Inner Circle</h2>
+        <p class="newsletter-desc">Be first to know about new collections, exclusive offers, and style inspiration delivered to your inbox.</p>
+        <div class="newsletter-form">
+          <input type="email" class="newsletter-input" placeholder="Your email address">
+          <button class="newsletter-btn" onclick="handleNewsletterSignup(this)">Subscribe</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- END HOME PAGE -->
+
+  <!-- ==================== SHOP PAGE ==================== -->
+  <div id="page-shop" class="page">
+    <div class="shop-layout">
+
+      <!-- FILTER SIDEBAR -->
+      <aside class="filters-panel">
+
+        <div class="filter-group">
+          <div class="filter-title">Category</div>
+          <div class="filter-options">
+            <button class="filter-opt" onclick="toggleFilter(this)">
+              <span class="filter-check"></span> Women's Unstitched
+            </button>
+            <button class="filter-opt" onclick="toggleFilter(this)">
+              <span class="filter-check"></span> Women's Stitched
+            </button>
+            <button class="filter-opt" onclick="toggleFilter(this)">
+              <span class="filter-check"></span> Men's Stitched
+            </button>
+            <button class="filter-opt" onclick="toggleFilter(this)">
+              <span class="filter-check"></span> Kids' Wear
+            </button>
+            <button class="filter-opt" onclick="toggleFilter(this)">
+              <span class="filter-check"></span> Accessories
+            </button>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <div class="filter-title">Price Range</div>
+          <div>
+            <!-- oninput fires live on every slider movement → calls handlePriceRange -->
+            <input type="range" min="500" max="20000" value="20000" id="price-range-input"
+              style="width:100%;accent-color:var(--gold)"
+              oninput="handlePriceRange(this.value)">
+            <div style="display:flex;justify-content:space-between;font-size:12px;color:var(--stone);margin-top:8px;">
+              <span>PKR 500</span>
+              <span id="price-range-label">PKR 20,000</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <div class="filter-title">Color</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            <button onclick="this.style.outline=this.style.outline?'':'2px solid var(--charcoal)'" style="width:28px;height:28px;border-radius:50%;background:#1C1C1A;border:none;cursor:pointer;"></button>
+            <button onclick="this.style.outline=this.style.outline?'':'2px solid var(--charcoal)'" style="width:28px;height:28px;border-radius:50%;background:#ffffff;border:1px solid var(--border);cursor:pointer;"></button>
+            <button onclick="this.style.outline=this.style.outline?'':'2px solid var(--charcoal)'" style="width:28px;height:28px;border-radius:50%;background:#C4847A;border:none;cursor:pointer;"></button>
+            <button onclick="this.style.outline=this.style.outline?'':'2px solid var(--charcoal)'" style="width:28px;height:28px;border-radius:50%;background:#7A9E8A;border:none;cursor:pointer;"></button>
+            <button onclick="this.style.outline=this.style.outline?'':'2px solid var(--charcoal)'" style="width:28px;height:28px;border-radius:50%;background:#B8934A;border:none;cursor:pointer;"></button>
+            <button onclick="this.style.outline=this.style.outline?'':'2px solid var(--charcoal)'" style="width:28px;height:28px;border-radius:50%;background:#4a6a8a;border:none;cursor:pointer;"></button>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <div class="filter-title">Size</div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;">
+            <button class="size-opt" onclick="this.classList.toggle('active')">XS</button>
+            <button class="size-opt" onclick="this.classList.toggle('active')">S</button>
+            <button class="size-opt" onclick="this.classList.toggle('active')">M</button>
+            <button class="size-opt" onclick="this.classList.toggle('active')">L</button>
+            <button class="size-opt" onclick="this.classList.toggle('active')">XL</button>
+            <button class="size-opt" onclick="this.classList.toggle('active')">XXL</button>
+          </div>
+        </div>
+
+        <button class="btn-primary" style="width:100%;margin-top:16px" onclick="applyShopFilters()">Apply Filters</button>
+        <button class="btn-ghost" style="width:100%;margin-top:8px;color:var(--stone);border-color:var(--border)" onclick="clearFilters()">Clear All</button>
+      </aside>
+
+      <!-- PRODUCTS AREA -->
+      <div class="shop-products">
+        <div class="shop-toolbar">
+          <span class="shop-count" id="shop-count">Showing 8 products</span>
+          <select class="sort-select" id="sort-select" onchange="handleSort(this.value)">
+            <option value="">Sort by: Featured</option>
+            <option value="new">Newest First</option>
+            <option value="low">Price: Low to High</option>
+            <option value="high">Price: High to Low</option>
+          </select>
+        </div>
+        <div class="shop-grid" id="shop-grid"></div>
+        <div style="text-align:center;margin-top:60px;">
+          <button id="load-more-btn" class="btn-ghost"
+            style="color:var(--charcoal);border-color:var(--border-strong);padding:16px 48px"
+            onclick="loadMoreProducts()">Load More Products
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- END SHOP PAGE -->
+
+  <!-- ==================== PRODUCT DETAIL PAGE ==================== -->
+  <div id="page-product" class="page">
+    <div class="breadcrumb">
+      <a onclick="showPage('home')">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <a onclick="showPage('shop')">Collections</a>
+      <span class="breadcrumb-sep">›</span>
+      <span id="pd-breadcrumb">Product</span>
+    </div>
+    <div class="product-detail">
+      <div class="pd-grid">
+        <div class="pd-images">
+          <div class="pd-thumbs" id="pd-thumbs"></div>
+          <div class="pd-main-img" id="pd-main-img"></div>
+        </div>
+        <div class="pd-info">
+          <div class="pd-category" id="pd-cat"></div>
+          <h1 class="pd-title" id="pd-title"></h1>
+          <div class="pd-price" id="pd-price"></div>
+
+          <div class="pd-section-label">Color</div>
+          <div class="pd-colors" id="pd-colors"></div>
+
+          <div class="pd-section-label">Size <a href="#" style="font-size:11px;color:var(--stone);text-decoration:underline;margin-left:8px" onclick="return false;">Size Guide</a></div>
+          <div class="pd-sizes" id="pd-sizes"></div>
+
+          <div class="pd-actions">
+            <button class="pd-add-btn" onclick="addCurrentToCart()">Add to Bag</button>
+            <button class="pd-wish-btn" onclick="this.style.color=this.style.color?'':'var(--rose)';this.style.borderColor=this.style.borderColor?'':'var(--rose)'">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+
+          <p class="pd-desc" id="pd-desc"></p>
+
+          <div class="pd-accordion">
+            <div class="acc-item">
+              <button class="acc-header" onclick="toggleAcc(this)">
+                Fabric &amp; Care
+                <span class="acc-icon" style="font-size:20px">+</span>
+              </button>
+              <div class="acc-body">
+                Premium quality fabric. Hand wash cold separately. Do not bleach. Dry flat. Low iron. Dry clean only if needed. Our fabrics are ethically sourced and OEKO-TEX certified.
+              </div>
+            </div>
+            <div class="acc-item">
+              <button class="acc-header" onclick="toggleAcc(this)">
+                Shipping &amp; Returns
+                <span class="acc-icon" style="font-size:20px">+</span>
+              </button>
+              <div class="acc-body">
+                Free standard delivery on orders over PKR 3,000. Express delivery available (1-2 days). Easy 30-day returns. Items must be unworn with original tags. Sale items are final sale.
+              </div>
+            </div>
+            <div class="acc-item">
+              <button class="acc-header" onclick="toggleAcc(this)">
+                Size &amp; Fit
+                <span class="acc-icon" style="font-size:20px">+</span>
+              </button>
+              <div class="acc-body">
+                Model is 5'8" and wearing size S. This style runs true to size. For a relaxed fit, size up. Measurements are chest, waist, hip in inches. Full size guide available online.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RELATED PRODUCTS -->
+    <div class="section" style="padding-top:40px;">
+      <div class="section-header">
+        <div>
+          <div class="section-eyebrow">You May Also Like</div>
+          <h2 class="section-title">Similar Items</h2>
+        </div>
+      </div>
+      <div class="product-grid" id="related-grid"></div>
+    </div>
+  </div>
+  <!-- END PRODUCT DETAIL PAGE -->
+
+  <!-- ==================== WISHLIST PAGE ==================== -->
+  <div id="page-wishlist" class="page">
+    <div class="breadcrumb">
+      <a onclick="showPage('home')">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>Wishlist</span>
+    </div>
+    <div class="section">
+      <div class="section-header">
+        <div>
+          <div class="section-eyebrow">Saved Items</div>
+          <h2 class="section-title">My Wishlist</h2>
+        </div>
+      </div>
+      <div style="text-align:center;padding:60px 0;color:var(--stone);">
+        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="margin-bottom:16px;opacity:0.4"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        <p style="font-family:'Cormorant Garamond',serif;font-size:24px;margin-bottom:12px;">Your wishlist is empty</p>
+        <p style="font-size:14px;margin-bottom:32px;">Save items you love for later.</p>
+        <button class="btn-primary" onclick="showPage('shop')">Explore Collection</button>
+      </div>
+    </div>
+  </div>
+  <!-- END WISHLIST PAGE -->
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">HYPE<span>WE</span>AR</div>
+          <p class="footer-tagline">Curating refined fashion for the modern Pakistani woman and man. Quality, elegance, and style — delivered to your door.</p>
+          <div class="social-links">
+            <a class="social-btn" href="#" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a class="social-btn" href="#" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a class="social-btn" href="#" aria-label="TikTok">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Shop</div>
+          <ul class="footer-links">
+            <li><a onclick="showPage('shop')" style="cursor:pointer">New Arrivals</a></li>
+            <li><a onclick="filterAndShowShop('Women')" style="cursor:pointer">Women</a></li>
+            <li><a onclick="filterAndShowShop('Men')" style="cursor:pointer">Men</a></li>
+            <li><a onclick="filterAndShowShop('Kids')" style="cursor:pointer">Kids</a></li>
+            <li><a onclick="filterAndShowShop('Accessories')" style="cursor:pointer">Accessories</a></li>
+            <li><a onclick="filterAndShowShop('Sale')" style="cursor:pointer">Sale</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Help</div>
+          <ul class="footer-links">
+            <li><a href="#">Size Guide</a></li>
+            <li><a href="#">Shipping Info</a></li>
+            <li><a href="#">Returns &amp; Exchanges</a></li>
+            <li><a href="#">Track Order</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Company</div>
+          <ul class="footer-links">
+            <li><a href="#">About HypeWear</a></li>
+            <li><a href="#">Sustainability</a></li>
+            <li><a href="#">Store Locator</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 HypeWear Fashion House. All rights reserved.</p>
+        <div class="payment-icons">
+          <span class="payment-icon">JazzCash</span>
+          <span class="payment-icon">EasyPaisa</span>
+          <span class="payment-icon">Visa</span>
+          <span class="payment-icon">Mastercard</span>
+          <span class="payment-icon">COD</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- OVERLAYS -->
+  <div class="overlay" id="overlay" onclick="closeAll()"></div>
+
+  <!-- CART DRAWER -->
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-header">
+      <span class="cart-title">Shopping Bag</span>
+      <button class="close-btn" onclick="toggleCart()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="cart-body" id="cart-body">
+      <div class="cart-empty">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        <p>Your bag is empty</p>
+      </div>
+    </div>
+    <div class="cart-footer" id="cart-footer" style="display:none">
+      <div class="cart-subtotal">
+        <span class="cart-subtotal-label">Subtotal</span>
+        <span class="cart-subtotal-val" id="cart-total">PKR 0</span>
+      </div>
+      <p class="cart-shipping" id="cart-shipping">Add PKR 3,000 more for free shipping</p>
+      <button class="checkout-btn">Proceed to Checkout</button>
+      <button class="continue-btn" onclick="toggleCart()">Continue Shopping</button>
+    </div>
+  </div>
+
+  <!-- SEARCH OVERLAY -->
+  <div class="search-overlay" id="search-overlay">
+    <div class="search-inner">
+      <p class="search-label">What are you looking for?</p>
+      <div class="search-field">
+        <input type="text" placeholder="Search products..." id="search-input" oninput="handleSearch(this.value)">
+        <button class="search-close" onclick="toggleSearch()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <!-- Live results appear here -->
+      <div id="search-results-preview"></div>
+      <!-- Popular tags shown when input is empty -->
+      <div class="search-suggestions" id="search-suggestions-block">
+        <p>Popular searches</p>
+        <div class="search-tags">
+          <button class="search-tag" onclick="searchFor('Lawn')">Lawn Suit</button>
+          <button class="search-tag" onclick="searchFor('Kurta')">Kurta</button>
+          <button class="search-tag" onclick="searchFor('Shawl')">Shawl</button>
+          <button class="search-tag" onclick="searchFor('Embroidered')">Embroidered</button>
+          <button class="search-tag" onclick="searchFor('Chiffon')">Chiffon</button>
+          <button class="search-tag" onclick="searchFor('Summer')">Summer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
+
+</body>
+</html>
