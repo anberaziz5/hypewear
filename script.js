@@ -915,6 +915,7 @@ function loadMoreProducts() {
     }
   }, 700);
 }
+
 // ====== COUNTDOWN ======
 function startCountdown() {
   let h = 11, m = 59, s = 59;
