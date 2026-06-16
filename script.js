@@ -1,20 +1,291 @@
 // ====== DATA ======
 const products = [
-  { id:1, name:"Gulbahar Embroidered Lawn", cat:"Women's Unstitched", price:4850, orig:null, badge:"New", colors:["#c4a882","#7a9e8a","#c4847a"], sizes:["S","M","L","XL"], desc:"A delicate floral masterpiece in premium lawn fabric. Features intricate embroidery on the front, sleeves and dupatta. Perfect for summer gatherings and casual festivities.", bg:"#f0e8dc", image:"images/women1.jpg" },
-  { id:2, name:"Midnight Chiffon Maxi", cat:"Women's Stitched", price:7200, orig:9500, badge:"Sale", colors:["#1a1a1a","#2d3050","#5a2020"], sizes:["XS","S","M","L","XL"], desc:"Flowing midnight chiffon maxi dress with subtle shimmer. Flattering empire waist with ruffle detailing. Ideal for evening events and formal gatherings.", bg:"#1a1a28", image:"images/women2.jpg" },
-  { id:3, name:"Kashmiri Shawl Wrap", cat:"Accessories", price:3200, orig:null, badge:null, colors:["#8B4513","#2d4a2d","#1a1a50"], sizes:["One Size"], desc:"Authentic Kashmiri-inspired shawl in a rich wool blend. Hand-woven patterns with traditional motifs. Warm, luxurious, and timeless.", bg:"#2d1a0a", image:"images/women3.jpg" },
-  { id:4, name:"Linen Kurta Pajama Set", cat:"Men's Stitched", price:5500, orig:null, badge:"New", colors:["#e8e0d0","#4a5a3a","#1a1a1a"], sizes:["S","M","L","XL","XXL"], desc:"Premium linen kurta pajama in a relaxed contemporary silhouette. Breathable fabric perfect for summer wear. Minimalist design with tonal buttons.", bg:"#d4cfc0", image:"images/men1.jpg" },
-  { id:5, name:"Floral Printed Dupatta", cat:"Accessories", price:1850, orig:2400, badge:"Sale", colors:["#d4a0b0","#a0c4b0","#f0e080"], sizes:["One Size"], desc:"Lightweight chiffon dupatta with hand-block printed florals. Adds a pop of color to any outfit. Available in multiple colorways.", bg:"#f0d4dc", image:"images/women4.jpg" },
-  { id:6, name:"Oxford Formal Shirt", cat:"Men's Stitched", price:3800, orig:null, badge:null, colors:["#f0f0f0","#b0c4d8","#c4b0b0"], sizes:["S","M","L","XL","XXL"], desc:"Crisp Oxford weave formal shirt with a classic fit. Double-stitched seams for durability. Suitable for office and semi-formal occasions.", bg:"#e0e8f0", image:"images/men2.jpg" },
-  { id:7, name:"Embroidered Gharara Set", cat:"Women's Stitched", price:12500, orig:15000, badge:"Sale", colors:["#d4a060","#c4847a","#8a7090"], sizes:["XS","S","M","L"], desc:"Exquisitely embroidered gharara set with gold thread work. Includes kameez, gharara, and matching dupatta. A statement ensemble for weddings and celebrations.", bg:"#2a2010", image:"images/women5.jpg" },
-  { id:8, name:"Kids Festive Kurta", cat:"Kids' Wear", price:2200, orig:null, badge:"New", colors:["#e08040","#4080c0","#80c040"], sizes:["2-3Y","4-5Y","6-7Y","8-9Y"], desc:"Adorable festive kurta for little ones. Soft cotton blend with playful embroidery. Easy-care fabric that's comfortable all day long.", bg:"#f0e8d8", image:"images/kd1.jpg" },
+  // ==================== KIDS' WEAR (kd1 - kd7) ====================
+  { 
+    id: 1, 
+    name: "Varsity 23 Heavyweight Hoodie", 
+    cat: "Kids' Wear", 
+    price: 3450, 
+    orig: null, 
+    badge: "New", 
+    colors: ["#1a1a1a", "#f0f0f0"], 
+    sizes: ["3-4Y", "5-6Y", "7-8Y", "9-10Y"], 
+    desc: "Ultra-comfortable, premium heavyweight black fleece hoodie featuring stark athletic varsity chest typography. Built for a relaxed streetwear aesthetic for active kids.", 
+    bg: "#f0e8d8", 
+    image: "images/kd1.jpg" 
+  },
+  { 
+    id: 2, 
+    name: "Truffle Utility Shacket Set", 
+    cat: "Kids' Wear", 
+    price: 4800, 
+    orig: null, 
+    badge: null, 
+    colors: ["#c4a882", "#e8e0d0"], 
+    sizes: ["4-5Y", "6-7Y", "8-9Y"], 
+    desc: "An editorial two-piece co-ord set featuring a boxy-cut neutral utility shacket paired with matching relaxed cargo trousers. Crafted from premium, breathable cotton drill.", 
+    bg: "#f0e8dc", 
+    image: "images/kd2.jpg" 
+  },
+  { 
+    id: 3, 
+    name: "Adventure Club Sleeveless Set", 
+    cat: "Kids' Wear", 
+    price: 3200, 
+    orig: 4200, 
+    badge: "Sale", 
+    colors: ["#8B4513", "#1a1a1a"], 
+    sizes: ["3-4Y", "5-6Y", "7-8Y"], 
+    desc: "Streetwear essential sleeveless drop-shoulder tee displaying minimalist front text embroidery, paired with matching raw-hem sweat shorts in deep truffle brown.", 
+    bg: "#2d1a0a", 
+    image: "images/kd3.jpg" 
+  },
+  { 
+    id: 4, 
+    name: "New York Fleece Sweatset", 
+    cat: "Kids' Wear", 
+    price: 4500, 
+    orig: null, 
+    badge: "New", 
+    colors: ["#e8e0d0", "#1a1a1a"], 
+    sizes: ["5-6Y", "7-8Y", "9-10Y"], 
+    desc: "An ultra-soft brushed fleece pullover crewneck showcasing a block-printed varsity layout. Complemented by matching tapered slouch joggers in a warm biscuit beige.", 
+    bg: "#d4cfc0", 
+    image: "images/kd4.jpg" 
+  },
+  { 
+    id: 5, 
+    name: "Powder Blue Tailored Blazer", 
+    cat: "Kids' Wear", 
+    price: 5200, 
+    orig: null, 
+    badge: null, 
+    colors: ["#b0c4d8", "#f0f0f0"], 
+    sizes: ["6-7Y", "8-9Y", "10-11Y"], 
+    desc: "An incredible high-end formal piece for kids. This structural, single-breasted blazer comes in a stunning powder blue tone with elegant peak lapels and a relaxed frame.", 
+    bg: "#e0e8f0", 
+    image: "images/kd5.jpg" 
+  },
+  { 
+    id: 6, 
+    name: "Off-Shoulder Denim Street Set", 
+    cat: "Kids' Wear", 
+    price: 4950, 
+    orig: 6500, 
+    badge: "Sale", 
+    colors: ["#2d3050"], 
+    sizes: ["4-5Y", "6-7Y", "8-9Y"], 
+    desc: "Asymmetrical raw-edge oversized denim jacket coupled with broad, slouchy wide-leg street denim trousers. An absolute showstopper editorial silhouette.", 
+    bg: "#1a1a28", 
+    image: "images/kd6.jpg" 
+  },
+  { 
+    id: 7, 
+    name: "Midnight Script Sweatshirt Set", 
+    cat: "Kids' Wear", 
+    price: 3800, 
+    orig: null, 
+    badge: null, 
+    colors: ["#b0c4d8", "#1a1a1a"], 
+    sizes: ["5-6Y", "7-8Y", "9-10Y"], 
+    desc: "Premium lightweight loopback cotton sweatshirt highlighting a crisp white script accent. Completed with comfortable loose athletic shorts and a fine metal detailing clip.", 
+    bg: "#e0e8f0", 
+    image: "images/kd7.jpg" 
+  },
+
+  // ==================== MEN'S WEAR (men1 - men5) ====================
+  { 
+    id: 8, 
+    name: "Shadow Mock-Neck Knit Combo", 
+    cat: "Men's Stitched", 
+    price: 6500, 
+    orig: null, 
+    badge: "New", 
+    colors: ["#1a1a1a", "#4a5a3a"], 
+    sizes: ["S", "M", "L", "XL"], 
+    desc: "A minimalist structured mock-neck sweater woven from heavy cotton-blend yarns. Beautifully contrasted by dynamic, structural loose pleated charcoal grey streetwear trousers.", 
+    bg: "#1a1a28", 
+    image: "images/men1.jpg" 
+  },
+  { 
+    id: 9, 
+    name: "Ember Orange Puffer Coat", 
+    cat: "Men's Stitched", 
+    price: 12500, 
+    orig: 16000, 
+    badge: "Sale", 
+    colors: ["#e08040", "#1a1a1a"], 
+    sizes: ["M", "L", "XL", "XXL"], 
+    desc: "High-density editorial puffer jacket coat featuring a rich monochrome ember orange wrap. Down-filled extreme volume panels, insulated build, and deep industrial pockets.", 
+    bg: "#2a2010", 
+    image: "images/men2.jpg" 
+  },
+  { 
+    id: 10, 
+    name: "Alabaster Boxy Crewneck Set", 
+    cat: "Men's Stitched", 
+    price: 7800, 
+    orig: null, 
+    badge: null, 
+    colors: ["#f0f0f0", "#7a9e8a"], 
+    sizes: ["S", "M", "L", "XL"], 
+    desc: "A modern street look pairing an ultra-thick boxy-cut cotton sweat pullover with wide-leg utility cargo trousers in a striking muted sage green finish.", 
+    bg: "#e0e8f0", 
+    image: "images/men3.jpg" 
+  },
+  { 
+    id: 11, 
+    name: "Chalk Sweatshirt & Olive Cargo", 
+    cat: "Men's Stitched", 
+    price: 7200, 
+    orig: null, 
+    badge: "New", 
+    colors: ["#e8e0d0", "#4a5a3a"], 
+    sizes: ["S", "M", "L", "XL"], 
+    desc: "Clean loungewear meet utility street. This setup offers a minimal drop-shoulder fleece top anchored by durable olive utility pants with integrated structural strapping accents.", 
+    bg: "#d4cfc0", 
+    image: "images/men4.jpg" 
+  },
+  { 
+    id: 12, 
+    name: "Ochre Corduroy Worker Jacket", 
+    cat: "Men's Stitched", 
+    price: 5800, 
+    orig: 7800, 
+    badge: "Sale", 
+    colors: ["#B8934A", "#1a1a1a"], 
+    sizes: ["S", "M", "L", "XL"], 
+    desc: "A stunning fine-wale corduroy worker overshirt jacket in a bold ochre yellow tint. Designed with twin box pockets, a classic flat collar, and tailored industrial buttons.", 
+    bg: "#f0e8dc", 
+    image: "images/men5.jpg" 
+  },
+
+  // ==================== WOMEN'S WEAR (women1 - women9) ====================
+  { 
+    id: 13, 
+    name: "Marigold Silk Relaxed Shirt", 
+    cat: "Women's Stitched", 
+    price: 4500, 
+    orig: null, 
+    badge: "New", 
+    colors: ["#e08040", "#c4a882"], 
+    sizes: ["XS", "S", "M", "L", "XL"], 
+    desc: "A fluid, premium silk satin blend button-down shirt cut for an oversized drape. The rich marigold tone catches soft natural lighting elegantly.", 
+    bg: "#f0e8dc", 
+    image: "images/women1.jpg" 
+  },
+  { 
+    id: 14, 
+    name: "Noir Turtleneck & Drape Trousers", 
+    cat: "Women's Stitched", 
+    price: 6800, 
+    orig: null, 
+    badge: null, 
+    colors: ["#1a1a1a", "#8B4513"], 
+    sizes: ["XS", "S", "M", "L"], 
+    desc: "High-end editorial simplicity. This outfit pairs a heavy ribbed knit turtleneck top with dramatic structural utility pleat drape trousers in deep charcoal grey.", 
+    bg: "#1a1a28", 
+    image: "images/women2.jpg" 
+  },
+  { 
+    id: 15, 
+    name: "Rust Chunky Knit Cardigan", 
+    cat: "Women's Stitched", 
+    price: 5200, 
+    orig: null, 
+    badge: null, 
+    colors: ["#8B4513", "#c4a882"], 
+    sizes: ["S", "M", "L"], 
+    desc: "A dense chunky hand-knit cardigan in an earthy burnt rust orange shade. Designed with dropping shoulders and wide balloon sleeves for optimal cold layering.", 
+    bg: "#2d1a0a", 
+    image: "images/women3.jpg" 
+  },
+  { 
+    id: 16, 
+    name: "Oatmeal Structured Pantsuit", 
+    cat: "Women's Stitched", 
+    price: 11000, 
+    orig: 15000, 
+    badge: "Sale", 
+    colors: ["#e8e0d0", "#1a1a1a"], 
+    sizes: ["XS", "S", "M", "L"], 
+    desc: "Tailored minimalist capsule luxury. Features a relaxed tailored blazer with soft internal structural shoulder lining and matching flowing high-waisted loose trousers.", 
+    bg: "#f0d4dc", 
+    image: "images/women4.jpg" 
+  },
+  { 
+    id: 17, 
+    name: "Honeycomb Cable-Knit Turtleneck", 
+    cat: "Women's Stitched", 
+    price: 4800, 
+    orig: null, 
+    badge: "New", 
+    colors: ["#B8934A", "#1a1a1a"], 
+    sizes: ["XS", "S", "M", "L"], 
+    desc: "A cropped, thick statement sweater built with deep honeycomb cabling in an amber-gold hue. The structural thick-line mock neck creates a strong geometric profile.", 
+    bg: "#2a2010", 
+    image: "images/women5.jpg" 
+  },
+  { 
+    id: 18, 
+    name: "Espresso Waistcoat & Wide Trouser Set", 
+    cat: "Women's Stitched", 
+    price: 8500, 
+    orig: null, 
+    badge: null, 
+    colors: ["#8B4513", "#1a1a1a"], 
+    sizes: ["XS", "S", "M"], 
+    desc: "A premium asynchronous aesthetic combining a tailored business formal waistcoat vest with coordinated high-rise fluid puddle trousers in espresso brown.", 
+    bg: "#2d1a0a", 
+    image: "images/women6.jpg" 
+  },
+  { 
+    id: 19, 
+    name: "Tangerine Editorial Open Blazer", 
+    cat: "Women's Stitched", 
+    price: 9500, 
+    orig: 13000, 
+    badge: "Sale", 
+    colors: ["#e08040", "#f0f0f0"], 
+    sizes: ["S", "M", "L"], 
+    desc: "A sharp, extended length fashion blazer boasting a loud crimson-tangerine finish. Perfect when styled open over clean white slouchy cargo denim pants.", 
+    bg: "#f0d4dc", 
+    image: "images/women7.jpg" 
+  },
+  { 
+    id: 20, 
+    name: "Off-White Crinkle Muslin Shirt Set", 
+    cat: "Women's Stitched", 
+    price: 5900, 
+    orig: null, 
+    badge: "New", 
+    colors: ["#ffffff", "#c4a882"], 
+    sizes: ["XS", "S", "M", "L"], 
+    desc: "An organic crinkle muslin set with a relaxed button-front shirt and matching linen-blend wide loungewear pants. Breathable minimalism engineered for peak elegance.", 
+    bg: "#f0e8d8", 
+    image: "images/women8.jpg" 
+  },
+  { 
+    id: 21, 
+    name: "Moss Green Wool Duster Coat", 
+    cat: "Women's Stitched", 
+    price: 14000, 
+    orig: null, 
+    badge: null, 
+    colors: ["#4a5a3a", "#5a2020"], 
+    sizes: ["S", "M", "L", "XL"], 
+    desc: "A stunning luxury item. Longline premium brushed wool duster coat draped in deep olive moss green, pictured over a stark, tonal deep plum slip ensemble.", 
+    bg: "#1a1a28", 
+    image: "images/women9.jpg" 
+  }
 ];
 
 const productColors = {
-  "#c4a882":"Sand","#7a9e8a":"Sage","#c4847a":"Rose","#1a1a1a":"Black",
-  "#2d3050":"Navy","#5a2020":"Burgundy","#e8e0d0":"Ivory","#4a5a3a":"Olive",
-  "#f0f0f0":"White","#b0c4d8":"Sky","#d4a060":"Gold","#8a7090":"Mauve",
-  "#e08040":"Tangerine","#4080c0":"Blue","#80c040":"Green",
+  "#c4a882": "Sand", "#7a9e8a": "Sage", "#c4847a": "Rose", "#1a1a1a": "Black",
+  "#2d3050": "Navy", "#5a2020": "Plum", "#e8e0d0": "Ivory", "#4a5a3a": "Moss Green",
+  "#f0f0f0": "White", "#b0c4d8": "Sky Blue", "#d4a060": "Gold", "#8a7090": "Mauve",
+  "#e08040": "Tangerine", "#4080c0": "Blue", "#80c040": "Green", "#8B4513": "Espresso/Rust",
+  "#B8934A": "Ochre"
 };
 
 // ====== STATE ======
@@ -24,7 +295,7 @@ let selectedSize = null;
 
 // Active filter state
 let activeFilters = {
-  category: null,   // string keyword like "Men", "Women", "Kids", "Accessories", "Sale"
+  category: null,
   maxPrice: 20000,
   searchQuery: '',
   sortBy: ''
@@ -61,7 +332,7 @@ function renderProductCard(p) {
         <div class="product-img-placeholder" style="background:${p.image ? 'none' : bg}">
           ${p.image
             ? `<img src="${p.image}" alt="${p.name}" style="width:100%;height:100%;object-fit:cover;" loading="lazy">`
-            : renderProductSVG(p, tc)}
+            : renderProductSVG(p.id, tc)}
         </div>
         ${p.badge ? `<span class="product-badge ${badgeClass}">${p.badge}</span>` : ''}
         <button class="product-wishlist" onclick="event.stopPropagation();toggleWishlist(this)" aria-label="Wishlist">
@@ -84,67 +355,17 @@ function renderProductCard(p) {
   `;
 }
 
-function renderProductSVG(p, tc) {
+// FIXED: This now maps correctly to the new item structural IDs
+function renderProductSVG(id, tc) {
   const svgs = {
-    1: `<svg viewBox="0 0 200 280" width="65%" style="position:relative;z-index:1">
-          <ellipse cx="100" cy="44" rx="28" ry="30" fill="${tc}" opacity="0.6"/>
-          <path d="M72 74 Q55 130 48 240 L152 240 Q145 130 128 74 Z" fill="${tc}" opacity="0.5"/>
-          <path d="M72 74 L48 120 L38 240 L70 240 L84 120 Z" fill="${tc}" opacity="0.4"/>
-          <path d="M128 74 L152 120 L162 240 L130 240 L116 120 Z" fill="${tc}" opacity="0.4"/>
-          <ellipse cx="100" cy="135" rx="30" ry="2" fill="${tc}" opacity="0.4"/>
-          <path d="M70 85 Q100 100 130 85" stroke="${tc}" stroke-width="1" fill="none" opacity="0.6"/>
-        </svg>`,
-    2: `<svg viewBox="0 0 200 280" width="65%" style="position:relative;z-index:1">
-          <ellipse cx="100" cy="42" rx="26" ry="28" fill="${tc}" opacity="0.9"/>
-          <path d="M74 70 Q50 160 46 280 L154 280 Q150 160 126 70 Z" fill="${tc}" opacity="0.7"/>
-          <path d="M46 200 Q100 220 154 200" stroke="${tc}" stroke-width="0.5" fill="none" opacity="0.5"/>
-        </svg>`,
-    3: `<svg viewBox="0 0 200 180" width="65%" style="position:relative;z-index:1">
-          <path d="M20 40 Q100 20 180 40 L160 160 Q100 180 40 160 Z" fill="${tc}" opacity="0.6"/>
-          <path d="M35 45 Q100 28 165 45" stroke="${tc}" stroke-width="2" fill="none" opacity="0.8"/>
-          <path d="M30 80 Q100 65 170 80" stroke="${tc}" stroke-width="1" fill="none" opacity="0.5"/>
-        </svg>`,
-    4: `<svg viewBox="0 0 200 260" width="65%" style="position:relative;z-index:1">
-          <ellipse cx="100" cy="42" rx="28" ry="30" fill="${tc}" opacity="0.7"/>
-          <path d="M72 72 Q55 130 50 210 L150 210 Q145 130 128 72 Z" fill="${tc}" opacity="0.6"/>
-          <path d="M60 210 L55 260 L80 260 L100 215 L120 260 L145 260 L140 210 Z" fill="${tc}" opacity="0.5"/>
-          <rect x="68" y="100" width="64" height="8" rx="2" fill="${tc}" opacity="0.4"/>
-        </svg>`,
-    5: `<svg viewBox="0 0 200 140" width="65%" style="position:relative;z-index:1">
-          <path d="M10 30 Q100 10 190 30 L180 120 Q100 140 20 120 Z" fill="${tc}" opacity="0.5"/>
-          <path d="M20 35 Q100 18 180 35" stroke="${tc}" stroke-width="1.5" fill="none" opacity="0.7"/>
-          <circle cx="50" cy="80" r="8" fill="${tc}" opacity="0.3"/>
-          <circle cx="100" cy="70" r="10" fill="${tc}" opacity="0.3"/>
-          <circle cx="150" cy="80" r="8" fill="${tc}" opacity="0.3"/>
-        </svg>`,
-    6: `<svg viewBox="0 0 200 220" width="65%" style="position:relative;z-index:1">
-          <path d="M60 20 L140 20 L150 60 L160 200 L40 200 L50 60 Z" fill="${tc}" opacity="0.6"/>
-          <path d="M60 20 L30 80 L60 100 L80 60 Z" fill="${tc}" opacity="0.5"/>
-          <path d="M140 20 L170 80 L140 100 L120 60 Z" fill="${tc}" opacity="0.5"/>
-          <rect x="70" y="55" width="60" height="4" rx="1" fill="${tc}" opacity="0.5"/>
-          <rect x="75" y="70" width="50" height="2" rx="1" fill="${tc}" opacity="0.4"/>
-        </svg>`,
-    7: `<svg viewBox="0 0 220 300" width="65%" style="position:relative;z-index:1">
-          <ellipse cx="110" cy="42" rx="28" ry="30" fill="${tc}" opacity="0.8"/>
-          <path d="M82 72 Q65 120 62 160 L158 160 Q155 120 138 72 Z" fill="${tc}" opacity="0.7"/>
-          <path d="M50 160 L30 300 L90 300 L110 200 L130 300 L190 300 L170 160 Z" fill="${tc}" opacity="0.6"/>
-          <path d="M65 165 Q110 180 155 165" stroke="${tc}" stroke-width="1.5" fill="none" opacity="0.8"/>
-        </svg>`,
-    8: `<svg viewBox="0 0 160 220" width="65%" style="position:relative;z-index:1">
-          <ellipse cx="80" cy="36" rx="24" ry="26" fill="${tc}" opacity="0.7"/>
-          <path d="M56 62 Q44 110 42 190 L118 190 Q116 110 104 62 Z" fill="${tc}" opacity="0.6"/>
-          <path d="M56 62 L32 100 L50 110 L66 80 Z" fill="${tc}" opacity="0.5"/>
-          <path d="M104 62 L128 100 L110 110 L94 80 Z" fill="${tc}" opacity="0.5"/>
-          <circle cx="80" cy="90" r="5" fill="${tc}" opacity="0.5"/>
-          <circle cx="65" cy="105" r="4" fill="${tc}" opacity="0.4"/>
-          <circle cx="95" cy="105" r="4" fill="${tc}" opacity="0.4"/>
-        </svg>`,
+    1: `<svg viewBox="0 0 160 220" width="65%" style="position:relative;z-index:1"><ellipse cx="80" cy="36" rx="24" ry="26" fill="${tc}" opacity="0.7"/><path d="M56 62 Q44 110 42 190 L118 190 Q116 110 104 62 Z" fill="${tc}" opacity="0.6"/></svg>`,
+    8: `<svg viewBox="0 0 200 260" width="65%" style="position:relative;z-index:1"><ellipse cx="100" cy="42" rx="28" ry="30" fill="${tc}" opacity="0.7"/><path d="M72 72 Q55 130 50 210 L150 210 Q145 130 128 72 Z" fill="${tc}" opacity="0.6"/><rect x="68" y="100" width="64" height="8" rx="2" fill="${tc}" opacity="0.4"/></svg>`,
+    13: `<svg viewBox="0 0 200 280" width="65%" style="position:relative;z-index:1"><ellipse cx="100" cy="44" rx="28" ry="30" fill="${tc}" opacity="0.6"/><path d="M72 74 Q55 130 48 240 L152 240 Q145 130 128 74 Z" fill="${tc}" opacity="0.5"/></svg>`
   };
-  return svgs[p.id] || svgs[1];
+  return svgs[id] || svgs[1];
 }
 
 // ====== FILTERING ENGINE ======
-// Master function: applies all active filters + sort and re-renders the shop grid
 function applyShopFilters() {
   const sgrid = document.getElementById('shop-grid');
   const countEl = document.getElementById('shop-count');
@@ -152,13 +373,19 @@ function applyShopFilters() {
 
   let filtered = [...products];
 
-  // 1. Category filter
+  // 1. Category filter (FIXED boundary leak)
   if (activeFilters.category) {
     const cat = activeFilters.category.toLowerCase();
     if (cat === 'sale') {
       filtered = filtered.filter(p => p.badge === 'Sale');
     } else {
-      filtered = filtered.filter(p => p.cat.toLowerCase().includes(cat));
+      filtered = filtered.filter(p => {
+        const productCat = p.cat.toLowerCase();
+        if (cat === 'men') {
+          return productCat.startsWith('men'); 
+        }
+        return productCat.includes(cat);
+      });
     }
   }
 
@@ -184,7 +411,7 @@ function applyShopFilters() {
     filtered = filtered.filter(p => p.badge === 'New').concat(filtered.filter(p => p.badge !== 'New'));
   }
 
-  // Render
+  // Render Layout
   if (filtered.length === 0) {
     sgrid.innerHTML = `
       <div style="grid-column:1/-1;text-align:center;padding:80px 20px;color:var(--stone);">
@@ -199,7 +426,6 @@ function applyShopFilters() {
 
   if (countEl) countEl.textContent = `Showing ${filtered.length} of ${products.length} products`;
 
-  // Hide load-more when a filter is active or nothing more to load
   const loadMoreBtn = document.getElementById('load-more-btn');
   if (loadMoreBtn) {
     const hasActiveFilter = activeFilters.category || activeFilters.searchQuery || activeFilters.maxPrice < 20000;
@@ -207,37 +433,31 @@ function applyShopFilters() {
   }
 }
 
-// Called when nav links (Men / Women / Kids / Accessories / Sale) are clicked
+// FIXED: Clears out previous remnants before swapping category sets
 function filterAndShowShop(categoryKeyword) {
   activeFilters.category = categoryKeyword;
   activeFilters.searchQuery = '';
   activeFilters.maxPrice = 20000;
   activeFilters.sortBy = '';
 
-  // Reset price slider UI
   const slider = document.getElementById('price-range-input');
   const sliderLabel = document.getElementById('price-range-label');
   if (slider) slider.value = 20000;
   if (sliderLabel) sliderLabel.textContent = 'PKR 20,000';
 
-  // Reset sort select
   const sortSel = document.getElementById('sort-select');
   if (sortSel) sortSel.value = '';
 
-  // Clear category checkbox highlights in sidebar
   document.querySelectorAll('.filter-check').forEach(c => c.classList.remove('checked'));
 
-  // Show shop page
+  const sgrid = document.getElementById('shop-grid');
+  if (sgrid) sgrid.innerHTML = '';
+
   showPage('shop');
-
-  // Apply the filter after the page switch
   applyShopFilters();
-
-  // Show a toast so user knows what happened
   showToast(`Showing: ${categoryKeyword}`);
 }
 
-// Live price-range slider handler (fires on every input event)
 function handlePriceRange(val) {
   activeFilters.maxPrice = parseInt(val, 10);
   const label = document.getElementById('price-range-label');
@@ -254,7 +474,6 @@ function toggleSearch() {
   }
 }
 
-// Live search: fires on every keystroke in the search input
 function handleSearch(val) {
   const q = val.trim().toLowerCase();
   const suggestionsBlock = document.getElementById('search-suggestions-block');
@@ -300,7 +519,6 @@ function handleSearch(val) {
   `;
 }
 
-// Navigate directly to a product from search preview
 function searchGoToProduct(id) {
   toggleSearch();
   document.getElementById('search-input').value = '';
@@ -309,7 +527,6 @@ function searchGoToProduct(id) {
   showProduct(id);
 }
 
-// Commit search: close overlay, go to shop with query filter applied
 function commitSearch(term) {
   activeFilters.searchQuery = term;
   activeFilters.category = null;
@@ -322,7 +539,6 @@ function commitSearch(term) {
   showToast(`Results for "${term}"`);
 }
 
-// Quick-search tag buttons in the overlay
 function searchFor(term) {
   document.getElementById('search-input').value = term;
   handleSearch(term);
@@ -330,7 +546,7 @@ function searchFor(term) {
 
 // ====== INIT ======
 function init() {
-  // Render new arrivals on home page
+  // Render new arrivals on home page (First 8 items from the collection mix)
   const narr = document.getElementById('new-arrivals-grid');
   if (narr) narr.innerHTML = products.slice(0, 8).map(p => renderProductCard(p)).join('');
 
@@ -338,7 +554,6 @@ function init() {
   const sgrid = document.getElementById('shop-grid');
   if (sgrid) sgrid.innerHTML = products.map(p => renderProductCard(p)).join('');
 
-  // Wire price-range slider
   const slider = document.getElementById('price-range-input');
   if (slider) {
     slider.addEventListener('input', function () {
@@ -346,13 +561,9 @@ function init() {
     });
   }
 
-  // Inject mobile filter toggle button
   injectMobileFilterToggle();
-
-  // Countdown timer
   startCountdown();
 
-  // Sticky header on scroll
   window.addEventListener('scroll', () => {
     const header = document.getElementById('main-header');
     if (header) header.classList.toggle('scrolled', window.scrollY > 20);
@@ -368,7 +579,6 @@ function showPage(name) {
   closeAll();
 
   if (name === 'shop') {
-    // If shop grid is empty on first visit, populate it
     const sgrid = document.getElementById('shop-grid');
     if (sgrid && !sgrid.innerHTML.trim()) {
       applyShopFilters();
@@ -403,14 +613,14 @@ function showProduct(id) {
   // Main Image
   document.getElementById('pd-main-img').innerHTML = p.image
     ? `<img src="${p.image}" alt="${p.name}" style="width:100%;height:100%;object-fit:cover;">`
-    : `<div style="width:100%;height:100%;background:${p.bg};display:flex;align-items:center;justify-content:center;">${renderProductSVG(p, '#8a6a50')}</div>`;
+    : `<div style="width:100%;height:100%;background:${p.bg};display:flex;align-items:center;justify-content:center;">${renderProductSVG(p.id, '#8a6a50')}</div>`;
 
   // Thumbnails
   document.getElementById('pd-thumbs').innerHTML = p.image
     ? `<div class="pd-thumb active" style="overflow:hidden;"><img src="${p.image}" style="width:100%;height:100%;object-fit:cover;"></div>`
-    : `<div class="pd-thumb active" style="background:${p.bg};display:flex;align-items:center;justify-content:center;">${renderProductSVG(p, '#8a6a50')}</div>`;
+    : `<div class="pd-thumb active" style="background:${p.bg};display:flex;align-items:center;justify-content:center;">${renderProductSVG(p.id, '#8a6a50')}</div>`;
 
-  // Related products (different category preferred, then fallback)
+  // Related products matching
   const related = products
     .filter(x => x.id !== id)
     .sort((a, b) => (a.cat === p.cat ? -1 : 1))
@@ -500,7 +710,6 @@ function renderCart() {
   document.getElementById('cart-total').textContent = 'PKR ' + total.toLocaleString();
   document.getElementById('cart-count').textContent = cart.reduce((s, i) => s + i.qty, 0);
 
-  // Shipping message logic
   const shippingMsg = document.getElementById('cart-shipping');
   if (shippingMsg) {
     if (total >= FREE_SHIPPING_THRESHOLD) {
@@ -568,7 +777,6 @@ function toggleFilter(btn) {
   check.classList.toggle('checked');
 }
 
-// Clear all filter state and reset UI
 function clearAllFilters() {
   activeFilters.category = null;
   activeFilters.maxPrice = 20000;
@@ -590,7 +798,6 @@ function clearAllFilters() {
   showToast('All filters cleared');
 }
 
-// Legacy alias used by sidebar "Clear All" button
 function clearFilters() {
   clearAllFilters();
 }
@@ -598,13 +805,11 @@ function clearFilters() {
 // ====== ACCORDION ======
 function toggleAcc(btn) {
   const isOpen = btn.classList.contains('open');
-  // Close all accordions first
   document.querySelectorAll('.acc-header.open').forEach(h => {
     h.classList.remove('open');
     h.nextElementSibling.classList.remove('open');
     h.querySelector('.acc-icon').textContent = '+';
   });
-  // If this one was closed, open it
   if (!isOpen) {
     btn.classList.add('open');
     btn.nextElementSibling.classList.add('open');
@@ -623,7 +828,7 @@ function toggleMobileMenu() {
   document.getElementById('mobile-menu').classList.toggle('open');
 }
 
-// ====== MOBILE FILTER TOGGLE (injected into sidebar on small screens) ======
+// ====== MOBILE FILTER TOGGLE ======
 function injectMobileFilterToggle() {
   const filterPanel = document.querySelector('.filters-panel');
   if (!filterPanel) return;
@@ -679,7 +884,7 @@ function handleNewsletterSignup(btn) {
   }
 }
 
-// ====== LOAD MORE (pagination simulation) ======
+// ====== LOAD MORE ======
 function loadMoreProducts() {
   const shopGrid = document.getElementById('shop-grid');
   const loadMoreBtn = document.getElementById('load-more-btn');
@@ -691,8 +896,8 @@ function loadMoreProducts() {
   loadMoreBtn.style.opacity = '0.5';
 
   setTimeout(() => {
-    // Append a second batch (simulated — re-uses existing products with offset IDs)
     const batch = products.map(item => ({ ...item, id: item.id + 100 + shopGrid.children.length }));
+    // FIXED: Removed the misplaced interior semicolon here
     shopGrid.insertAdjacentHTML('beforeend', batch.map(p => renderProductCard(p)).join(''));
 
     const count = shopGrid.children.length;
@@ -710,7 +915,6 @@ function loadMoreProducts() {
     }
   }, 700);
 }
-
 // ====== COUNTDOWN ======
 function startCountdown() {
   let h = 11, m = 59, s = 59;

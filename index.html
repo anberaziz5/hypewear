@@ -27,7 +27,6 @@
         <a href="#" onclick="filterAndShowShop('Women');return false;">Women</a>
         <a href="#" onclick="filterAndShowShop('Men');return false;">Men</a>
         <a href="#" onclick="filterAndShowShop('Kids');return false;">Kids</a>
-        <a href="#" onclick="filterAndShowShop('Accessories');return false;">Accessories</a>
       </nav>
 
       <a class="logo" href="#" onclick="showPage('home');return false;">HYPE<span>WE</span>AR</a>
@@ -82,19 +81,7 @@
       </div>
       <div class="hero-right">
         <div class="hero-image-placeholder">
-          <svg class="pattern-svg" viewBox="0 0 600 800" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:0.3">
-            <circle cx="300" cy="200" r="180" stroke="#B8934A" stroke-width="0.5"/>
-            <circle cx="300" cy="200" r="240" stroke="#B8934A" stroke-width="0.3"/>
-            <circle cx="300" cy="600" r="150" stroke="#B8934A" stroke-width="0.5"/>
-            <line x1="0" y1="400" x2="600" y2="400" stroke="#B8934A" stroke-width="0.3"/>
-          </svg>
-          <svg viewBox="0 0 400 600" width="70%" height="70%" style="position:relative;z-index:1">
-            <ellipse cx="200" cy="80" rx="45" ry="50" fill="#2a2520" opacity="0.8"/>
-            <path d="M155 130 Q140 200 120 400 L280 400 Q260 200 245 130 Z" fill="#3d3028" opacity="0.9"/>
-            <path d="M120 400 Q100 500 90 600 L310 600 Q300 500 280 400 Z" fill="#2d251e" opacity="0.95"/>
-            <rect x="130" y="230" width="140" height="18" rx="2" fill="#B8934A" opacity="0.6"/>
-            <path d="M175 130 Q200 155 225 130" stroke="#B8934A" stroke-width="1.5" fill="none" opacity="0.7"/>
-          </svg>
+          <img src="images/Home.jpg" alt="HypeWear Summer Collection" style="width: 100%; height: 100%; object-fit: cover;">
           <div class="hero-overlay-text">
             <div class="hero-tag">SS 2026</div>
             <div class="hero-tag">New In</div>
@@ -104,45 +91,39 @@
     </section>
 
     <!-- CATEGORY STRIP -->
-    <div class="cat-strip">
-      <div class="cat-grid">
-        <a class="cat-item" href="#" onclick="filterAndShowShop('Women');return false;">
-          <div class="cat-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="7" r="4"/><path d="M12 11v10M8 21h8M6 14h12"/></svg>
-          </div>
-          <span class="cat-name">Women</span>
-          <span class="cat-count">248 items</span>
-        </a>
-        <a class="cat-item" href="#" onclick="filterAndShowShop('Men');return false;">
-          <div class="cat-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="6" y="2" width="12" height="20" rx="1"/><path d="M9 8h6M9 12h6M9 16h4"/></svg>
-          </div>
-          <span class="cat-name">Men</span>
-          <span class="cat-count">186 items</span>
-        </a>
-        <a class="cat-item" href="#" onclick="filterAndShowShop('Kids');return false;">
-          <div class="cat-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-          </div>
-          <span class="cat-name">Kids</span>
-          <span class="cat-count">124 items</span>
-        </a>
-        <a class="cat-item" href="#" onclick="filterAndShowShop('Accessories');return false;">
-          <div class="cat-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          </div>
-          <span class="cat-name">Accessories</span>
-          <span class="cat-count">95 items</span>
-        </a>
-        <a class="cat-item" href="#" onclick="filterAndShowShop('Sale');return false;">
-          <div class="cat-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78a5.5 5.5 0 0 0 0-7.78z"/></svg>
-          </div>
-          <span class="cat-name">Sale</span>
-          <span class="cat-count">67 items</span>
-        </a>
+    <!-- CATEGORY STRIP -->
+<div class="cat-strip">
+  <div class="cat-grid" style="grid-template-columns: repeat(4, 1fr);">
+    <a class="cat-item" href="#" onclick="filterAndShowShop('Women');return false;">
+      <div class="cat-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="7" r="4"/><path d="M12 11v10M8 21h8M6 14h12"/></svg>
       </div>
-    </div>
+      <span class="cat-name">Women</span>
+      <span class="cat-count">248 items</span>
+    </a>
+    <a class="cat-item" href="#" onclick="filterAndShowShop('Men');return false;">
+      <div class="cat-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="6" y="2" width="12" height="20" rx="1"/><path d="M9 8h6M9 12h6M9 16h4"/></svg>
+      </div>
+      <span class="cat-name">Men</span>
+      <span class="cat-count">186 items</span>
+    </a>
+    <a class="cat-item" href="#" onclick="filterAndShowShop('Kids');return false;">
+      <div class="cat-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      </div>
+      <span class="cat-name">Kids</span>
+      <span class="cat-count">124 items</span>
+    </a>
+    <a class="cat-item" href="#" onclick="filterAndShowShop('Sale');return false;">
+      <div class="cat-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      </div>
+      <span class="cat-name">Sale</span>
+      <span class="cat-count">67 items</span>
+    </a>
+  </div>
+</div>
 
     <!-- NEW ARRIVALS -->
     <div class="section">
@@ -183,89 +164,82 @@
     </div>
 
     <!-- LOOKBOOK -->
-    <div class="section" id="lookbook">
-      <div class="section-header">
-        <div>
-          <div class="section-eyebrow">Inspiration</div>
-          <h2 class="section-title">The Lookbook</h2>
-        </div>
-      </div>
-      <div class="lookbook-grid">
-        <div class="look-item">
-          <div class="look-placeholder" style="height:100%;min-height:500px;">
-            <div style="width:100%;height:100%;background:linear-gradient(160deg,#2d2520,#1a1512);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
-              <svg viewBox="0 0 300 500" width="60%">
-                <ellipse cx="150" cy="80" rx="40" ry="44" fill="#3d3028"/>
-                <path d="M110 124 Q85 220 70 420 L230 420 Q215 220 190 124 Z" fill="#4a3930"/>
-                <path d="M70 420 Q55 470 50 500 L250 500 Q245 470 230 420 Z" fill="#362820"/>
-                <rect x="80" y="200" width="140" height="14" fill="#B8934A" opacity="0.8"/>
-              </svg>
-              <div class="look-overlay" style="opacity:1;background:linear-gradient(to top,rgba(14,14,12,0.85) 0%,transparent 50%)">
-                <div class="look-info">
-                  <div class="look-tag">Editorial</div>
-                  <div class="look-title">The Evening Silhouette</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="look-item">
-          <div class="look-placeholder">
-            <div style="width:100%;height:100%;background:linear-gradient(135deg,#e8e0d5,#d4c8b8);display:flex;align-items:center;justify-content:center;position:relative;">
-              <svg viewBox="0 0 300 400" width="60%">
-                <ellipse cx="150" cy="65" rx="36" ry="38" fill="#8a7060"/>
-                <path d="M114 103 Q100 160 90 340 L210 340 Q200 160 186 103 Z" fill="#c4b09a"/>
-                <rect x="105" y="160" width="90" height="10" fill="#5a4030" opacity="0.5"/>
-              </svg>
-              <div class="look-overlay">
-                <div class="look-info">
-                  <div class="look-tag">Casual</div>
-                  <div class="look-title">Effortless Days</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="look-item">
-          <div class="look-placeholder">
-            <div style="width:100%;height:100%;background:linear-gradient(135deg,#1a2030,#0e1525);display:flex;align-items:center;justify-content:center;position:relative;">
-              <svg viewBox="0 0 300 400" width="60%">
-                <ellipse cx="150" cy="65" rx="36" ry="38" fill="#2a3545"/>
-                <path d="M114 103 Q90 160 80 340 L220 340 Q210 160 186 103 Z" fill="#1e3050"/>
-                <path d="M114 103 L80 200 L60 340 L100 340 L120 200 Z" fill="#243860"/>
-                <path d="M186 103 L220 200 L240 340 L200 340 L180 200 Z" fill="#243860"/>
-                <rect x="100" y="175" width="100" height="8" fill="#B8934A" opacity="0.6"/>
-              </svg>
-              <div class="look-overlay">
-                <div class="look-info">
-                  <div class="look-tag">Formal</div>
-                  <div class="look-title">The Power Suit</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="look-item">
-          <div class="look-placeholder">
-            <div style="width:100%;height:100%;background:linear-gradient(135deg,#2d1a1a,#1a0f0f);display:flex;align-items:center;justify-content:center;position:relative;">
-              <svg viewBox="0 0 300 400" width="60%">
-                <ellipse cx="150" cy="65" rx="36" ry="38" fill="#5a2020"/>
-                <path d="M114 103 Q95 180 88 340 L212 340 Q205 180 186 103 Z" fill="#7a2a2a"/>
-                <path d="M88 340 Q82 375 80 400 L220 400 Q218 375 212 340 Z" fill="#5a2020"/>
-                <circle cx="150" cy="120" r="8" fill="#B8934A" opacity="0.9"/>
-              </svg>
-              <div class="look-overlay">
-                <div class="look-info">
-                  <div class="look-tag">Summer</div>
-                  <div class="look-title">Crimson Dreams</div>
-                </div>
-              </div>
+    <!-- LOOKBOOK -->
+<div class="section" id="lookbook">
+  <div class="section-header">
+    <div>
+      <div class="section-eyebrow">Inspiration</div>
+      <h2 class="section-title">The Lookbook</h2>
+    </div>
+  </div>
+  <div class="lookbook-grid">
+    
+    <!-- LOOK ITEM 1: EDITORIAL -->
+    <div class="look-item">
+      <div class="look-placeholder" style="height:100%; min-height:500px;">
+        <div style="width:100%; height:100%; position:relative; overflow:hidden;">
+          <!-- Updated image source to down1.jpg -->
+          <img src="images/down1.jpg" alt="The Evening Silhouette" style="width:100%; height:100%; object-fit:cover;">
+          <div class="look-overlay" style="opacity:1; background:linear-gradient(to top, rgba(14,14,12,0.85) 0%, transparent 50%)">
+            <div class="look-info">
+              <div class="look-tag">Editorial</div>
+              <div class="look-title">The Evening Silhouette</div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
+    <!-- LOOK ITEM 2: CASUAL -->
+    <div class="look-item">
+      <div class="look-placeholder">
+        <div style="width:100%; height:100%; position:relative; overflow:hidden;">
+          <!-- Updated image source to down2.jpg -->
+          <img src="images/down2.jpg" alt="Effortless Days" style="width:100%; height:100%; object-fit:cover;">
+          <div class="look-overlay">
+            <div class="look-info">
+              <div class="look-tag">Casual</div>
+              <div class="look-title">Effortless Days</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LOOK ITEM 3: FORMAL -->
+    <div class="look-item">
+      <div class="look-placeholder">
+        <div style="width:100%; height:100%; position:relative; overflow:hidden;">
+          <!-- Updated image source to down3.jpg -->
+          <img src="images/down3.jpg" alt="The Power Suit" style="width:100%; height:100%; object-fit:cover;">
+          <div class="look-overlay">
+            <div class="look-info">
+              <div class="look-tag">Formal</div>
+              <div class="look-title">The Power Suit</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LOOK ITEM 4: SUMMER -->
+    <div class="look-item">
+      <div class="look-placeholder">
+        <div style="width:100%; height:100%; position:relative; overflow:hidden;">
+          <!-- Updated image source to down4.jpg -->
+          <img src="images/down4.jpg" alt="Crimson Dreams" style="width:100%; height:100%; object-fit:cover;">
+          <div class="look-overlay">
+            <div class="look-info">
+              <div class="look-tag">Summer</div>
+              <div class="look-title">Crimson Dreams</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
     <!-- FEATURES BAR -->
     <div class="features-bar">
       <div class="features-inner">
@@ -310,14 +284,14 @@
 
     <!-- BRANDS -->
     <div class="brands-section">
-      <p class="brands-title">Trusted by fashion lovers across Pakistan</p>
+      <p class="brands-title">Trusted by fashion lovers across the world</p>
       <div class="brands-logos">
-        <span class="brand-logo">Gul Ahmed</span>
-        <span class="brand-logo">Khaadi</span>
-        <span class="brand-logo">Sana Safinaz</span>
-        <span class="brand-logo">Sapphire</span>
-        <span class="brand-logo">Alkaram</span>
         <span class="brand-logo">Zara</span>
+        <span class="brand-logo">ASOS</span>
+        <span class="brand-logo">H&amp;M Move</span>
+        <span class="brand-logo">Mango</span>
+        <span class="brand-logo">Uniqlo</span>
+        <span class="brand-logo">Essentials</span>
       </div>
     </div>
 
@@ -400,20 +374,14 @@
         <div class="filter-group">
           <div class="filter-title">Category</div>
           <div class="filter-options">
-            <button class="filter-opt" onclick="toggleFilter(this)">
-              <span class="filter-check"></span> Women's Unstitched
+            <button class="filter-opt" onclick="filterAndShowShop('Women'); toggleFilter(this); return false;">
+              <span class="filter-check"></span> Women's Collection
             </button>
-            <button class="filter-opt" onclick="toggleFilter(this)">
-              <span class="filter-check"></span> Women's Stitched
+            <button class="filter-opt" onclick="filterAndShowShop('Men'); toggleFilter(this); return false;">
+              <span class="filter-check"></span> Men's Collection
             </button>
-            <button class="filter-opt" onclick="toggleFilter(this)">
-              <span class="filter-check"></span> Men's Stitched
-            </button>
-            <button class="filter-opt" onclick="toggleFilter(this)">
+            <button class="filter-opt" onclick="filterAndShowShop('Kids'); toggleFilter(this); return false;">
               <span class="filter-check"></span> Kids' Wear
-            </button>
-            <button class="filter-opt" onclick="toggleFilter(this)">
-              <span class="filter-check"></span> Accessories
             </button>
           </div>
         </div>
